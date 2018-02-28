@@ -1,0 +1,17 @@
+{
+  "name": "collab_standalone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "collab.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
+    "jquery-ui": "^1.12.1"
+  }
+}
