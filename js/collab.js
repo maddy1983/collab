@@ -3,19 +3,14 @@ $(function () {
     var apiKey = "46002202";
     var sessionId = "1_MX40NjAwMjIwMn5-MTUxOTc4MTUzMTU4OX41cTVpdEJud3RLa24zVVB5ekV0RVFDb2J-fg";
     var token = "T1==cGFydG5lcl9pZD00NjAwMjIwMiZzaWc9ODg2MGYxNmNiM2RmZTc3OGJmYzk2MzE2ZTg3YTVmYjdhYmZhNWU2YjpzZXNzaW9uX2lkPTFfTVg0ME5qQXdNakl3TW41LU1UVXhPVGM0TVRVek1UVTRPWDQxY1RWcGRFSnVkM1JMYTI0elZWQjVla1YwUlZGRGIySi1mZyZjcmVhdGVfdGltZT0xNTE5NzgxNTUyJm5vbmNlPTAuOTkxNTEzNDA0NzgyMzgzJnJvbGU9cHVibGlzaGVyJmV4cGlyZV90aW1lPTE1MjAzODYzNTMmaW5pdGlhbF9sYXlvdXRfY2xhc3NfbGlzdD0=";
-    // let task1 = setInterval(function () {
-    //     collabFn.callRefreshAjax();
-    //     collabFn.callAjax();
-    // }, 5000);
+
     session = "";
     collabFn = {
         makeSession: function (val) {
             session = OT.initSession(apiKey, sessionId);
         },
         initializeSession: function () {
-            // apiKey = sessionObj.apiKey;
-            // token = sessionObj.token;
-            // sessionId = sessionObj.sessionId;
+
             // Subscribe to a newly created stream
             session.on('streamCreated', function (event) {
                 if (event.stream.hasVideo) {
@@ -47,7 +42,6 @@ $(function () {
                         } else {
                             console.log('You have connected to the session.');
                             video_sec();
-                            // initiateTokbox();
                         }
                         // console.log('You have connected to the session.');
                     }
@@ -131,6 +125,7 @@ $(function () {
         }
     }
     collabFn.makeSession();
+    // collabFn.initializeSession();
     // Text chat
     var form = document.querySelector('.collabration-1');
     var msgTxt = document.querySelector('#submit_message');
@@ -200,6 +195,8 @@ $(function () {
         let id = $(this).attr('id');
         $('.tokbox_features_sec').show();
         $('.tokbox_features').hide();
+        collabFn.initializeSession();
+        $('#camera-publisher').html('');
         $("#" + id + "_sec").show(function () {
             switch (id) {
                 case 'tok_video':
